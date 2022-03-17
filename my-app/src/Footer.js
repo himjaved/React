@@ -7,11 +7,16 @@ export default function Footer() {
         <a
           href="https://github.com/himjaved/My-weather-project"
           target="_blank"
+          rel="noreferrer"
         >
           Open Source Code
         </a>
         by Himja Ved and{" "}
-        <a href="https://pedantic-meitner-862f0f.netlify.app/" target="_blank">
+        <a
+          href="https://pedantic-meitner-862f0f.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
           hosted on Netlify
         </a>{" "}
       </small>
