@@ -13,7 +13,7 @@ export default function Footer() {
         </a>
         by Himja Ved and{" "}
         <a
-          href="https://pedantic-meitner-862f0f.netlify.app/"
+          href="https://upbeat-blackwell-363820.netlify.app/"
           target="_blank"
           rel="noreferrer"
         >
