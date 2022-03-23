@@ -6,8 +6,6 @@ import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 
 export default function Weather(props) {
-  let city = props.data.city;
-
   return (
     <div className="Weather">
       <div className="weather-body">
