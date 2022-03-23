@@ -1,10 +1,14 @@
 import "./App.css";
-import Weather from "./Weather";
+import Footer from "./Footer";
+import Search from "./Search";
 
 function App() {
   return (
     <div className="App">
-      <Weather />
+      <div className="container">
+        <Search defaultCity="Sydney" />
+      </div>
+      <Footer />
     </div>
   );
 }

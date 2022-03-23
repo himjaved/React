@@ -1,36 +1,36 @@
 import React from "react";
-import Footer from "./Footer";
-import Search from "./Search";
+import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
+
+import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 
-export default function Weather() {
+export default function Weather(props) {
+  let city = props.data.city;
+
   return (
     <div className="Weather">
       <div className="weather-body">
-        <Search />
         <div className="row city-weather">
           <div className="col-6">
-            <div id="city-name">Melbourne</div>
-            <div id="showDate">Sunday 17:50</div>
+            <div className="city-name">{props.data.city}</div>
+            <div>
+              <FormattedDate date={props.data.date} />
+            </div>
 
-            <div id="weather-description">Clear</div>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-              alt="Clear"
-              id="icon"
-              className="float-left"
-              width="60px"
-            />
-            <div id="display-temp">17 °C</div>
+            <div className="description">{props.data.description}</div>
+            <div className="float-left">
+              <WeatherIcon code={props.data.icon} size={52} />
+            </div>
+            <WeatherTemperature celsius={props.data.temperature} />
           </div>
 
           <div className="col-6">
-            <div id="humidity">Humidity: 68%</div>
-            <div id="wind">Wind: 4km/h</div>
+            <div>Humidity: {props.data.humidity}%</div>
+            <div>Wind: {props.data.wind} km/h</div>
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

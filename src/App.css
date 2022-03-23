@@ -1,5 +1,17 @@
-.App {
-  text-align: center;
+.container {
+  margin: 30px auto;
+  margin-bottom: 10px;
+  width: 600px;
+  height: auto;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(91, 173, 254, 0.46) 0%,
+    rgba(54, 78, 83, 0.46) 47.2%,
+    rgba(170, 254, 235, 0.43) 90%
+  );
 }
 
 .App-logo {

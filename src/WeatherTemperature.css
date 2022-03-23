@@ -1,0 +1,13 @@
+.temp-num {
+  font-size: 42px;
+  color: rgb(13, 55, 240);
+}
+.unit {
+  font-size: 18px;
+  position: relative;
+  top: -18px;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
