@@ -9,7 +9,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          Open Source Code
+          Open Source Code{" "}
         </a>
         by Himja Ved and{" "}
         <a

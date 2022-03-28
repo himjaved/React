@@ -1,37 +1,40 @@
 import React, { useState } from "react";
 import Weather from "./Weather";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
-
 import "./Search.css";
 
-export default function Search() {
-  const [city, setCity] = useState("Sydney");
+export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
       description: response.data.weather[0].main,
       icon: response.data.weather[0].icon,
-      city: response.data.name,
+      cityName: response.data.name,
       wind: Math.round(response.data.wind.speed),
       date: new Date(response.data.dt * 1000),
     });
-  }
-
-  function weatherSearch() {
-    const apiKey = "1bc306ef820d7e96f756aa75ef67ef95";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
   }
   function handleSubmit(event) {
     event.preventDefault();
     weatherSearch();
   }
+
   function handleChangeCity(event) {
     setCity(event.target.value);
   }
+  function weatherSearch() {
+    const apiKey = "e8474ded332284d7f681067582717bab";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Search">
@@ -56,16 +59,10 @@ export default function Search() {
                 className="btn btn-success mb-1 btn-m"
               />
             </div>
-            <div className="col">
-              <input
-                type="submit"
-                value="Current Location"
-                className="btn btn-danger mb-1 btn-m"
-              />
-            </div>
           </div>
         </form>
         <Weather data={weatherData} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {

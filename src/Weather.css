@@ -1,7 +1,10 @@
 .Weather {
-  margin: 25px;
+  margin: 20px;
 }
 .city-name {
   font-size: 32px;
   font-weight: bold;
+}
+.float-left {
+  display: inline;
 }
